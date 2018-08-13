@@ -8,7 +8,9 @@
     <title>管理系统</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="font/iconfont.css">
+    <link rel="stylesheet" href="css/pages.css">
     <script src="js/jquery-1.8.0.js"></script>
+    <script src="js/pages.js"></script>
     <style>
     html,
     body {
@@ -89,7 +91,7 @@
         flex: 1;
         background-color: #f2f2f2;
         height: 100%;
-        margin:0 5px;
+        margin: 0 5px;
     }
 
     .home_head {
@@ -132,59 +134,118 @@
         font-size: 20px;
         color: #555;
     }
-    .home_from{
-    	background: white;
-    	margin: 30px 15px 0;
-    	padding: 15px;
+
+    .home_from {
+        background: white;
+        margin: 30px 15px 0;
+        padding: 15px;
     }
-    .input01{
-    	outline: none;
-    	border:1px solid #ccc;
-    	border-radius: 5px;
-    	padding:6px 12px;
-    	width: 130px;
-    	font-size: 12px;
-    	height: 32px;
-    	box-sizing:border-box;
+
+    .input01 {
+        outline: none;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 6px 12px;
+        width: 130px;
+        font-size: 12px;
+        height: 32px;
+        box-sizing: border-box;
+        margin-bottom: 10px;
     }
-    .input02{
-    	border-radius: 5px;
-	    outline: none;
-	    border: 1px solid #ccc;
-	    padding: 6px 12px;
-	    width: 120px;
-	    font-size: 12px;
-	    height: 32px;
-	    box-sizing: border-box;
+
+    .input02 {
+        border-radius: 5px;
+        outline: none;
+        border: 1px solid #ccc;
+        padding: 6px 12px;
+        width: 120px;
+        font-size: 12px;
+        height: 32px;
+        box-sizing: border-box;
     }
-	select{
-		border-radius: 5px;
-    	outline: none;
-    	border:1px solid #ccc;
-    	height: 32px;
-    	width: 120px;
-    	font-size: 12px;
-	}
-	.table{
-		width: 100%;
-		border-spacing: 0;
-    	border-collapse: collapse;
-    	border:1px solid #ccc;
-    	border-radius: 5px;
-    	background-color: white;
-    	margin-top: 15px;
-	}
-	.table tr th{
-		padding:5px;
-		font-size: 12px;
-		color: #555;
-	}
-	.table tr td{
-		text-align: center;
-		color: #555;
-		padding:5px;
-		font-size: 12px;
-	}
+
+    select {
+        border-radius: 5px;
+        outline: none;
+        border: 1px solid #ccc;
+        height: 32px;
+        width: 120px;
+        font-size: 12px;
+    }
+
+    .form_table {
+        margin-top: 15px;
+    }
+
+    .table {
+        width: 100%;
+        border-spacing: 0;
+        border-collapse: collapse;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: white;
+    }
+
+    .table tr th {
+        padding: 5px;
+        font-size: 12px;
+        color: #555;
+    }
+
+    .table tr td {
+        text-align: center;
+        color: #555;
+        padding: 5px;
+        font-size: 12px;
+    }
+
+    .search {
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 15px;
+    }
+
+    .search button {
+        margin-left: 5px;
+        outline: none;
+        border: none;
+        padding: 6px 12px;
+        font-size: 14px;
+        color: white;
+    }
+
+    .sousuo {
+        background-color: #0E7003;
+    }
+
+    .jiesuan,
+    .lvru,
+    .gengxin {
+        background-color: #FC0005;
+    }
+
+    .xinzeng {
+        background-color: #321EC5;
+    }
+
+    .nums_count {
+        display: flex;
+        justify-content: flex-end;
+        font-size: 14px;
+        color: #555;
+        margin: 15px;
+    }
+
+    .nums_count_list {
+        margin-left: 25px;
+    }
+
+    .nums {
+        color: red;
+    }
+    #pagination{
+        text-align: center;
+    }
     </style>
 </head>
 
@@ -228,7 +289,6 @@
                 <input name="date1" class="laydate-icon input01" autocomplete="off" type="date" id="date1" value="">
                 <label>-</label>
                 <input name="date2" class="laydate-icon input01" autocomplete="off" type="date" id="date2" value="">
-
                 <input name="id" type="text" class="input02" id="id" autocomplete="off" placeholder="id" value="">
                 <input name="mobile" type="text" class="input02" id="mobile" autocomplete="off" placeholder="手机号码" value="">
                 <input name="truename" type="text" class="input02" autocomplete="off" id="truename" placeholder="姓名" value="">
@@ -257,48 +317,72 @@
                     <option value="ETC">ETC</option>
                 </select>
             </div>
-            <table class="table" border="1">
-            	<thead>
-            		<tr>
-            			<th>ID</th>
-            			<th>姓名</th>
-            			<th>手机号</th>
-            			<th>所属机构</th>
-            			<th>余额</th>
-            			<th>BTM</th>
-            			<th>USDT</th>
-            			<th>SLBT</th>
-            			<th>SLBT认筹</th>
-            			<th>佣金</th>
-            			<th>B3+数量</th>
-            			<th>B3数量</th>
-            			<th>B2数量</th>
-            			<th>B2+数量</th>
-            			<th>B1数量</th>
-            			<th>佣金次数</th>
-            			<th>加入时间</th>
-            		</tr>
-            	</thead>
-            	<tr>
-            		<td>169305</td>
-            		<td>马钰华</td>
-            		<td>18987719123</td>
-            		<td>刘铁洲</td>
-            		<td>0.000</td>
-            		<td>0</td>	
-            		<td>10.00000000</td>
-            		<td>0</td>
-            		<td>0.00000000</td>
-            		<td>0.0000</td>
-            		<td>0</td>
-            		<td>0</td>
-            		<td>0</td>
-            		<td>0</td>
-            		<td>0</td>
-            		<td>1</td>
-            		<td>2018-08-13 17:19:07</td>
-            	</tr>
-            </table>
+            <div class="form_table">
+                <div class="search">
+                    <button class="sousuo">搜索</button>
+                    <button class="jiesuan">BTM结算</button>
+                    <button class="xinzeng">新增公告</button>
+                    <button class="lvru">SLBT录入</button>
+                    <button class="gengxin">更新公告</button>
+                </div>
+                <table class="table" border="1">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>姓名</th>
+                            <th>手机号</th>
+                            <th>所属机构</th>
+                            <th>余额</th>
+                            <th>BTM</th>
+                            <th>USDT</th>
+                            <th>SLBT</th>
+                            <th>SLBT认筹</th>
+                            <th>佣金</th>
+                            <th>B3+数量</th>
+                            <th>B3数量</th>
+                            <th>B2数量</th>
+                            <th>B2+数量</th>
+                            <th>B1数量</th>
+                            <th>佣金次数</th>
+                            <th>加入时间</th>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <td>169305</td>
+                        <td>马钰华</td>
+                        <td>18987719123</td>
+                        <td>刘铁洲</td>
+                        <td>0.000</td>
+                        <td>0</td>
+                        <td>10.00000000</td>
+                        <td>0</td>
+                        <td>0.00000000</td>
+                        <td>0.0000</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>2018-08-13 17:19:07</td>
+                    </tr>
+                </table>
+                <div class="nums_count">
+                    <div class="nums_count_list">
+                        <span>客户数量:</span>
+                        <span class="nums">4666</span>
+                    </div>
+                    <div class="nums_count_list">
+                        <span>总余额:</span>
+                        <span class="nums">3173244</span>
+                    </div>
+                    <div class="nums_count_list">
+                        <span>总BTM:</span>
+                        <span class="nums">1632342.78</span>
+                    </div>
+                </div>
+            </div>
+            <div id="pagination"></div>
         </div>
     </div>
     <script>
@@ -306,6 +390,59 @@
         $('.home_slider_list li').click(function() {
             $(this).addClass('active').siblings().removeClass('active');
         })
+
+
+
+        $("#pagination").whjPaging({
+            //可选，每页显示条数下拉框，默认下拉框5条/页(默认)、10条/页、15条/页、20条/页
+            pageSizeOpt: [
+                { 'value': 5, 'text': '5条/页', 'selected': true },
+                { 'value': 10, 'text': '10条/页' },
+                { 'value': 15, 'text': '15条/页' },
+                { 'value': 20, 'text': '20条/页' }
+            ],
+            //可选，css设置，可设置值：css-1，css-2，css-3，css-4，css-5，默认css-1，可自定义样式
+            css: 'css-1',
+            //可选，总页数
+            totalPage: 10,
+            //可选，展示页码数量，默认5个页码数量
+            totalSize: 90,
+            ////可选，展示页码数量，默认5个页码数量
+            showPageNum: 5,
+            //可选，首页按钮展示文本，默认显示文本为首页
+            firstPage: '首页',
+            //可选，上一页按钮展示文本，默认显示文本为上一页
+            previousPage: '上一页',
+            //可选，下一页按钮展示文本，默认显示文本为下一页
+            nextPage: '下一页',
+            //可选，尾页按钮展示文本，默认显示文本为尾页
+            lastPage: '尾页',
+            //可选，跳至展示文本，默认显示文本为跳至
+            skip: '跳至',
+            //可选，确认按钮展示文本，默认显示文本为确认
+            confirm: '确认',
+            //可选，刷新按钮展示文本，默认显示文本为刷新
+            refresh: '刷新',
+            //可选，共{}页展示文本，默认显示文本为共{}页，其中{}会在js具体转化为数字
+            totalPageText: '共{}页',
+            //可选，是否展示首页与尾页，默认true
+            isShowFL: false,
+            //可选，是否展示每页N条下拉框，默认true
+            isShowPageSizeOpt: false,
+            //可选，是否展示跳到指定页数，默认true
+            isShowSkip: true,
+            //可选，是否展示刷新，默认true
+            isShowRefresh: false,
+            //可选，是否展示共{}页，默认
+            isShowTotalSize: false,
+            isShowTotalPage: true,
+            //可选，是否需要重新设置当前页码及总页数，默认false，如果设为true，那么在请求服务器返回数据时，需要调用setPage方法
+            isResetPage: false,
+            //必选，回掉函数，返回参数：第一个参数为页码，第二个参数为每页显示N条
+            callBack: function(currPage, pageSize) {
+                console.log('currPage:' + currPage + '     pageSize:' + pageSize);
+            }
+        });
     })
     </script>
 </body>
