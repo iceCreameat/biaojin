@@ -1,42 +1,313 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-	<title>管理系统</title>
-	<link rel="stylesheet" href="css/reset.css">
-	<script src="js/jquery-1.8.0.js"></script>
-	<style>
-		html,body{
-			height: 100%;
-		}
-		.home{
-			display: flex;
-			height: 100%;
-		}
-		.home_slider{
-			width: 200px;
-			background-color: red;
-			height: 100%;
-			padding:15px 5px;
-			box-sizing: border-box;
-		}
-		.home_content{
-			flex:1;
-			background-color: green;
-			height: 100%;
-		}
-	</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=yes">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title>管理系统</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="font/iconfont.css">
+    <script src="js/jquery-1.8.0.js"></script>
+    <style>
+    html,
+    body {
+        height: 100%;
+    }
+
+    .home {
+        display: flex;
+        height: 100%;
+    }
+    /*侧边栏 start*/
+
+    .home_slider {
+        width: 200px;
+        background-image: url(images/slider_bg.jpg);
+        height: 100%;
+        box-sizing: border-box;
+        overflow: scroll;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .home_slider_logo {
+        margin: 0 auto;
+        width: 160px;
+        padding: 15px 5px 10px 5px;
+    }
+
+    .home_slider_logo img {
+        width: 100%;
+        height: auto;
+    }
+
+    .home_slider_title {
+        font-size: 20px;
+        color: #DFE0FA;
+        text-align: center;
+        padding: 10px 0 5px 0;
+        border-bottom: 2px solid #B5BFF2;
+        font-weight: 600;
+    }
+
+    .home_slider_list {
+        margin-top: 10px;
+        height: calc(100% - 250px);
+        overflow-y: scroll;
+    }
+
+    .home_slider_list li {
+        color: #DFE0FA;
+        padding: 10px 0;
+        cursor: pointer;
+        font-size: 16px;
+        padding-left: 45px;
+        display: flex;
+        align-items: center;
+    }
+
+    .home_slider_list li:hover {
+        background-color: rgba(0, 3, 149, 0.6);
+    }
+
+    .active {
+        background-color: rgba(0, 3, 149, 0.6)!important;
+        font-size: 20px!important;
+    }
+
+    .active i {
+        font-size: 20px!important;
+    }
+
+    .home_slider_list li i {
+        margin-right: 5px;
+    }
+    /*侧边栏 end*/
+
+    .home_content {
+        flex: 1;
+        background-color: #f2f2f2;
+        height: 100%;
+        margin:0 5px;
+    }
+
+    .home_head {
+        background-color: white;
+        padding: 15px;
+        text-align: center;
+        position: relative;
+    }
+
+    .home_head button {
+        border: 1px solid #ccc;
+        background-color: #ccc;
+        font-size: 14px;
+        outline: none;
+        color: #555;
+        border-radius: 5px;
+        padding: 6px 12px;
+        position: absolute;
+        right: 60px;
+        top: 8px;
+        cursor: pointer;
+        box-shadow: 0px 1px 1px #ccc;
+    }
+
+    .home_head button:hover {
+        background-color: red;
+        color: white;
+        border: 1px solid #ccc;
+    }
+
+    .home_head button:active {
+        font-size: 12px;
+        box-shadow: 0px 1px 1px red;
+    }
+
+    .home_type {
+        margin: 15px 0px;
+        background-color: white;
+        padding: 10px 15px;
+        font-size: 20px;
+        color: #555;
+    }
+    .home_from{
+    	background: white;
+    	margin: 30px 15px 0;
+    	padding: 15px;
+    }
+    .input01{
+    	outline: none;
+    	border:1px solid #ccc;
+    	border-radius: 5px;
+    	padding:6px 12px;
+    	width: 130px;
+    	font-size: 12px;
+    	height: 32px;
+    	box-sizing:border-box;
+    }
+    .input02{
+    	border-radius: 5px;
+	    outline: none;
+	    border: 1px solid #ccc;
+	    padding: 6px 12px;
+	    width: 120px;
+	    font-size: 12px;
+	    height: 32px;
+	    box-sizing: border-box;
+    }
+	select{
+		border-radius: 5px;
+    	outline: none;
+    	border:1px solid #ccc;
+    	height: 32px;
+    	width: 120px;
+    	font-size: 12px;
+	}
+	.table{
+		width: 100%;
+		border-spacing: 0;
+    	border-collapse: collapse;
+    	border:1px solid #ccc;
+    	border-radius: 5px;
+    	background-color: white;
+    	margin-top: 15px;
+	}
+	.table tr th{
+		padding:5px;
+		font-size: 12px;
+		color: #555;
+	}
+	.table tr td{
+		text-align: center;
+		color: #555;
+		padding:5px;
+		font-size: 12px;
+	}
+    </style>
 </head>
+
 <body>
-	<div class="home">
-		<div class="home_slider">
-			slider
-		</div>
-		<div class="home_content">
-			body
-		</div>
-	</div>		
+    <div class="home">
+        <div class="home_slider">
+            <div class="home_slider_logo">
+                <img src="images/h_logo.png" alt="">
+            </div>
+            <div class="home_slider_title">
+                财务部
+            </div>
+            <ul class="home_slider_list">
+                <li><i class="iconfont icon-beizhu"></i><span>客户管理</span></li>
+                <li><i class="iconfont icon-beizhu"></i><span>订单管理</span></li>
+                <li><i class="iconfont icon-beizhu"></i><span>BTM明细</span></li>
+                <li><i class="iconfont icon-beizhu"></i><span>OTC持仓单</span></li>
+                <li><i class="iconfont icon-beizhu"></i><span>OTC平仓单</span></li>
+                <li><i class="iconfont icon-beizhu"></i><span>C2C交易单</span></li>
+                <li><i class="iconfont icon-beizhu"></i><span>C2C完成单</span></li>
+                <li><i class="iconfont icon-beizhu"></i><span>提现管理</span></li>
+                <li><i class="iconfont icon-beizhu"></i><span>提币管理</span></li>
+                <li><i class="iconfont icon-beizhu"></i><span>充币管理</span></li>
+                <li><i class="iconfont icon-beizhu"></i><span>转账充值</span></li>
+                <li><i class="iconfont icon-beizhu"></i><span>提货保修</span></li>
+                <li><i class="iconfont icon-beizhu"></i><span>公告管理</span></li>
+                <li><i class="iconfont icon-beizhu"></i><span>名品报表</span></li>
+                <li><i class="iconfont icon-beizhu"></i><span>C2C申诉订单</span></li>
+                <li><i class="iconfont icon-beizhu"></i><span>二级身份认证</span></li>
+                <li><i class="iconfont icon-beizhu"></i><span>二级身份导出</span></li>
+            </ul>
+        </div>
+        <div class="home_content">
+            <div class="home_head">
+                <span>***,欢迎您！</span>
+                <button>退出</button>
+            </div>
+            <div class="home_type">客户管理</div>
+            <div class="home_from">
+                <label>时间</label>
+                <input name="date1" class="laydate-icon input01" autocomplete="off" type="date" id="date1" value="">
+                <label>-</label>
+                <input name="date2" class="laydate-icon input01" autocomplete="off" type="date" id="date2" value="">
+
+                <input name="id" type="text" class="input02" id="id" autocomplete="off" placeholder="id" value="">
+                <input name="mobile" type="text" class="input02" id="mobile" autocomplete="off" placeholder="手机号码" value="">
+                <input name="truename" type="text" class="input02" autocomplete="off" id="truename" placeholder="姓名" value="">
+                <select style="width:120px;" name="state" id="state">
+                    <option selected="selected" value="">类型</option>
+                    <option value="1">销售</option>
+                    <option value="2">充值</option>
+                    <option value="3">提现</option>
+                    <option value="4">手续费</option>
+                    <option value="8">认证</option>
+                    <option value="21">结算</option>
+                    <option value="22">BTM结算</option>
+                    <option value="25">销售</option>
+                    <option value="29">自动提币</option>
+                </select>
+                <select style="width:120px;" name="TB_state" id="TB_state">
+                    <option selected="selected" value="">提币类型</option>
+                    <option value="ETH">ETH</option>
+                    <option value="BTC">BTC</option>
+                    <option value="LTC">LTC</option>
+                    <option value="SLBT">SLBT</option>
+                    <option value="EOS">EOS</option>
+                    <option value="BCH">BCH</option>
+                    <option value="XRP">XRP</option>
+                    <option value="OMG">OMG</option>
+                    <option value="ETC">ETC</option>
+                </select>
+            </div>
+            <table class="table" border="1">
+            	<thead>
+            		<tr>
+            			<th>ID</th>
+            			<th>姓名</th>
+            			<th>手机号</th>
+            			<th>所属机构</th>
+            			<th>余额</th>
+            			<th>BTM</th>
+            			<th>USDT</th>
+            			<th>SLBT</th>
+            			<th>SLBT认筹</th>
+            			<th>佣金</th>
+            			<th>B3+数量</th>
+            			<th>B3数量</th>
+            			<th>B2数量</th>
+            			<th>B2+数量</th>
+            			<th>B1数量</th>
+            			<th>佣金次数</th>
+            			<th>加入时间</th>
+            		</tr>
+            	</thead>
+            	<tr>
+            		<td>169305</td>
+            		<td>马钰华</td>
+            		<td>18987719123</td>
+            		<td>刘铁洲</td>
+            		<td>0.000</td>
+            		<td>0</td>	
+            		<td>10.00000000</td>
+            		<td>0</td>
+            		<td>0.00000000</td>
+            		<td>0.0000</td>
+            		<td>0</td>
+            		<td>0</td>
+            		<td>0</td>
+            		<td>0</td>
+            		<td>0</td>
+            		<td>1</td>
+            		<td>2018-08-13 17:19:07</td>
+            	</tr>
+            </table>
+        </div>
+    </div>
+    <script>
+    $(function() {
+        $('.home_slider_list li').click(function() {
+            $(this).addClass('active').siblings().removeClass('active');
+        })
+    })
+    </script>
 </body>
+
 </html>
