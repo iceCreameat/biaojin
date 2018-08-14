@@ -18,6 +18,7 @@
     }
 
     .home {
+        min-width: 1200px;
         display: flex;
         height: 100%;
     }
@@ -28,9 +29,9 @@
         background-image: url(images/slider_bg.jpg);
         height: 100%;
         box-sizing: border-box;
-        overflow: scroll;
         background-repeat: no-repeat;
         background-size: 100% 100%;
+        overflow:hidden;
     }
 
     .home_slider_logo {
@@ -57,6 +58,7 @@
         margin-top: 10px;
         height: calc(100% - 250px);
         overflow-y: scroll;
+        width: 217px;
     }
 
     .home_slider_list li {
@@ -185,7 +187,10 @@
         border-radius: 5px;
         background-color: white;
     }
-
+    
+    .table thead tr{
+        background-color: #C3E4E7;
+    }
     .table tr th {
         padding: 5px;
         font-size: 12px;
@@ -199,6 +204,9 @@
         font-size: 12px;
     }
 
+    .table tr:nth-child(2n){
+        background-color: #F3FAF9;
+    }
     .search {
         display: flex;
         justify-content: flex-end;
@@ -259,7 +267,10 @@
                 财务部
             </div>
             <ul class="home_slider_list">
-                <li><i class="iconfont icon-beizhu"></i><span>客户管理</span></li>
+                <li name='客户管理'>
+                    <i class="iconfont icon-beizhu"></i>
+                    <span>客户管理</span>
+                </li>
                 <li><i class="iconfont icon-beizhu"></i><span>订单管理</span></li>
                 <li><i class="iconfont icon-beizhu"></i><span>BTM明细</span></li>
                 <li><i class="iconfont icon-beizhu"></i><span>OTC持仓单</span></li>
@@ -402,7 +413,7 @@
                 { 'value': 20, 'text': '20条/页' }
             ],
             //可选，css设置，可设置值：css-1，css-2，css-3，css-4，css-5，默认css-1，可自定义样式
-            css: 'css-1',
+            css: 'css-4',
             //可选，总页数
             totalPage: 10,
             //可选，展示页码数量，默认5个页码数量
