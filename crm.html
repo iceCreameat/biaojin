@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" user-scalable=yes">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<script src="js/jquery-1.8.0.js"></script>
+	<style>
+		html{
+			height:100%;
+		}
+		body{height:100%}
+		.login{
+			background-image: url(images/login_bg.jpg);
+			background-repeat: no-repeat;
+			background-size:cover;
+			background-position: 0 0;
+			height: 100%;
+			position: relative;
+			min-width: 1400px;
+
+		}
+		.head{
+			width: 100%;
+			height: 100px;
+			position: relative;
+		}
+		.login_logo{
+			position: absolute;
+			width: 360px;
+			left: 180px;
+			top: 30px;
+		}
+		.content{
+			height:460px;
+			width:620px;
+			margin:0 auto
+		}
+		.content ul li{
+			/*background: -webkit-linear-gradient(30deg,#d3a6e4 ,#ddcff4 ,#f2fafe 80%,#ddcff4 ,#d3a6e4 ); !* Safari 5.1 - 6.0 *!*/
+			/*background: -o-linear-gradient(30deg,#d3a6e4 ,#ddcff4 ,#f2fafe 80%,#ddcff4 ,#d3a6e4 ); !* Opera 11.1 - 12.0 *!*/
+			/*background: -moz-linear-gradient(30deg,#d3a6e4 ,#ddcff4 ,#f2fafe 80%,#ddcff4 ,#d3a6e4 ); !* Firefox 3.6 - 15 *!*/
+			/*background: linear-gradient(30deg,#d3a6e4 ,#ddcff4 ,#f2fafe 80%,#ddcff4 ,#d3a6e4 ); !* 标准的语法 *!*/
+			width: 120px;
+			height: 63px;
+			margin: 1px;
+			text-align: center;
+			float: left;
+			white-space: nowrap;
+			background-image: url(images/button_bg.png);
+			background-size: 95px 35px;
+			background-repeat: no-repeat;
+			background-position: 15px -1px;
+			line-height: 35px;
+			cursor: pointer;
+		}
+		.input_box{
+			position: relative;top:40px;left:300px;height: 20px;width: 200px;
+		}
+	
+		.input_title p{
+			color: #333333;
+			margin: 32px;
+		}
+
+		.input_box_next{
+			border: 1px solid #aeaeac;
+			padding: 5px;
+			width: 250px;
+			color: #aeaeae;
+			margin-bottom: 20px
+		}
+		.input_box_next input{
+			margin-left: 10px;
+			border:0;
+			height: 25px;
+			outline-color:white
+		}
+		.warning{
+			position: absolute;
+			top: 210px;
+			color: red;
+			left: 470px;
+			font-size: 8px;
+
+		}
+		.content_ul{
+			position: absolute;top: 222px;font-size: 15px;font-weight: 600;color: blue;
+		}
+		.content_box{
+			background: white;height: 250px;position: relative;width: 100%;top: 100%;border-radius: 5px;border: 6px solid rgba(212, 212, 212, 0.5);background-clip: padding-box;
+		}
+		.img_{
+			position: absolute;top: 30px;left: 30px;width: 250px;height: 180px;border-radius: 5px;
+		}
+		.login_button{
+			border-radius: 5px;
+			width: 100px;
+			border: red;
+			box-shadow: 2px 2px 1px 0px #7b7b69;
+			background: -o-linear-gradient(45deg,#0f82f4 -12%,#9a2eda 40%, #0f82f4);
+			background: -moz-linear-gradient(45deg,#0f82f4 -12%,#9a2eda 40%, #0f82f4);
+			background: linear-gradient(#c10000 ,#F44336,#c10000);
+			color: white;
+			cursor: pointer;
+		}
+		.yanzhengma{
+			height: 80px;
+			border: 1px solid #aeaeae;
+			position: absolute;
+			top: 110px;
+			left: 80px;
+			margin: 7px -8px;
+			width: 70px;
+		}
+		.yanzhengma_box{
+			width: 100px;
+			height: 40px;
+			border: 1px solid #aeaeae;
+			position: absolute;
+			top: 110px;
+			left: 160px;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="login">
+		<div class="head">
+			<img class="login_logo" src="images/logo.png"  alt="">
+		</div>
+
+		<div class="content">
+			<ul class="content_ul">
+				<li>管理员</li>
+				<li>财务部</li>
+				<li>客服部</li>
+				<li>风控部</li>
+				<li>会员单位</li>
+				<div style="clear: both"></div>
+				<div class="content_box">
+					<p class="p_val 组" style="position: absolute;left: 390px;top: 20px;color: red;">管理员登陆</p>
+					<div style="position: absolute;width: 100%;margin: 0 auto;height: 100%;display: table-cell;vertical-align:middle">
+						<div style="position: relative">
+							<img class="img_" src="images/管理员.jpg">
+							<div class="input_box">
+								<form action="">
+									<div class="input_box_next 登录名">账号 |<input class="username" type="text" ></div>
+									<div class="input_box_next 密码">密码 |<input class="password" type="password"></div>
+
+								</form>
+								<div style="width:130px" class="input_box_next">验证码 |<input style="margin-left: -10px;" class="yanzhengma 验证码" type="yanzhengma"></div>
+								<div class="yanzhengma_box"></div>
+								<button class="login_button">登陆</button>
+							</div>
+							<p class="warning"></p>
+						</div>
+					</div>
+				</div>
+			</ul>
+		</div>
+
+
+	</div>
+	<script>
+		$(document).ready(function () {
+            $(".content_ul>li").click(function () {
+                var f = this;
+                $('.content_ul>li').each(function () {
+                    var te = $(f).html();
+                    var sl = te;
+					  $('.p_val').html(te);
+					  $('.img_').attr('src','images/'+sl+'.jpg')
+                });
+            });
+
+            $(".username").blur(function() {
+                var 账号 = $(this).val();
+                if (账号 == '' || 账号.length != 11 || 账号 == null) {
+                    $('.warning').html("请输入正确的账号").show().fadeOut(2000);
+                    return false;
+                };
+            });
+
+            $(".password").blur(function() {
+                var 密码 = $(this).val();
+                if (密码 == '' || 密码.length < 8 || 密码 == null) {
+                    $('.warning').html("请输入正确的密码").show().fadeOut(2000);
+                    return false;
+                };
+            });
+
+            $('.login_button').click(function () {
+                var va = $('.password .username').val();
+                if(va=='') {
+                    $('.warning').html("账号密码不能为空").show().fadeOut(2000);
+                }
+            })
+
+            function post操作(提交参数, 操作, 回调) //公共参数
+            {
+                loads();
+
+                post返回值 = "";
+
+                if (PHP页面 == '') {
+                    PHP页面 = 'c2c.php';
+                }
+
+                if (操作 == "标签") {
+                    提交参数 = $(提交参数).attr("post-id");
+                }
+                eval('$.post("' + PHP页面 + '",{' + 提交参数 + '},function(data){post返回值=data;post回调(回调);})');
+            }
+
+            function post回调(回调) //公共参数
+            {
+                removeLoads();
+                try {
+                    post返回值 = JSON.parse(post返回值);
+                    if (post返回值 == '') {
+                        eval(回调);
+                    }
+                    if (typeof post返回值 == 'object' && post返回值) {
+                        if (回调 != "") {
+                            eval(回调);
+                        }
+                    }
+
+                } catch (e) {
+                    if (post返回值 == 'load') {
+                        关闭所有弹出窗口();
+                        $(".登录页面").css("display", "block");
+                        return false;
+                    }
+                    if (post返回值 == 'ok') {
+                        window.location.reload();
+                        return false;
+                    }
+                    alert(post返回值);
+                    window.location.reload();
+                    return false;
+                }
+
+            }
+
+            $(".login_button").bind("click", function() {
+                var 电话 = $(".登录名").val().trim();
+                var 密码 = $(".密码").val().trim();
+                var 验证码 = $(".验证码").val().trim();
+                if (电话 == '' || 密码 == '' || 验证码 == '') {
+                    alert("参数不能为空");
+                    return false;
+                }
+                PHP页面 = 'new_crm.php';
+                post操作("提交: '登录', 密码: '" + 密码 + "', 电话: '" + 电话 + "', 验证码: '" + 验证码 + "'");
+            });
+
+
+
+
+
+
+
+        });
+	</script>
+</body>
+</html>
